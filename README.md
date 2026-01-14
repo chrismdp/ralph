@@ -4,6 +4,8 @@ A simple autonomous engineering loop for Claude Code. Named after Ralph Wiggum b
 
 ![Ralph in action](ralph-two-layer-setup.png)
 
+[Read the blog post](https://www.chrismdp.com/running-ralph-in-production/)
+
 Ralph treats each Claude session as one engineer in a relay team. Each picks up where the last left off, completes ONE task, commits, and exits. The bash loop spawns the next engineer.
 
 ## Why Ralph?
