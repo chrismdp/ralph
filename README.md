@@ -75,6 +75,10 @@ Ralph will:
 
 For longer sessions, run Ralph PM alongside the build loop:
 
+![Two-layer Ralph setup](ralph-two-layer-setup.png)
+
+*Left: Ralph PM for interactive planning. Top right: Ralph loop building autonomously. Bottom right: Dev server for verification.*
+
 **Terminal 1 (Ralph Loop):**
 ```bash
 ./ralph.sh 100
