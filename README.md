@@ -90,7 +90,7 @@ For longer sessions, run Ralph PM alongside the build loop:
 
 **Terminal 2 (Ralph PM):**
 ```bash
-claude -p "Read @ralph-pm.md and follow the instructions."
+claude /ralph-pm
 # Then interactively add beads, discuss priorities, handle blocked items
 ```
 
@@ -120,7 +120,25 @@ Ralph burns through tokens. Running this setup continuously requires a Max20 pla
 
 - `ralph.sh` - The outer loop that spawns Claude sessions
 - `RALPH.md` - Instructions for each "engineer" session
-- `ralph-pm.md` - Instructions for the product manager session
+- `skills/ralph-pm/SKILL.md` - The product manager skill
+
+## Installing the Ralph PM Skill
+
+To use `/ralph-pm` in your project, copy the skill folder:
+
+```bash
+mkdir -p .claude/skills
+cp -r skills/ralph-pm .claude/skills/
+```
+
+Or symlink it:
+
+```bash
+mkdir -p .claude/skills
+ln -s "$(pwd)/skills/ralph-pm" .claude/skills/ralph-pm
+```
+
+Then run `claude /ralph-pm` to start a product manager session.
 
 ## Related
 
