@@ -90,7 +90,7 @@ For longer sessions, run Ralph PM alongside the build loop:
 
 **Terminal 2 (Ralph PM):**
 ```bash
-claude
+claude -p "Read @ralph-pm.md and follow the instructions."
 # Then interactively add beads, discuss priorities, handle blocked items
 ```
 
@@ -120,6 +120,7 @@ Ralph burns through tokens. Running this setup continuously requires a Max20 pla
 
 - `ralph.sh` - The outer loop that spawns Claude sessions
 - `RALPH.md` - Instructions for each "engineer" session
+- `ralph-pm.md` - Instructions for the product manager session
 
 ## Related
 
