@@ -45,7 +45,16 @@ curl -O https://raw.githubusercontent.com/chrismdp/ralph/main/RALPH.md
 chmod +x ralph.sh
 ```
 
-### Step 3: Customise RALPH.md
+### Step 3: Install the Ralph PM skill (optional)
+
+To use the two-layer setup with `/ralph-pm`:
+
+```bash
+mkdir -p .claude/skills
+curl -o .claude/skills/ralph-pm/SKILL.md --create-dirs https://raw.githubusercontent.com/chrismdp/ralph/main/skills/ralph-pm/SKILL.md
+```
+
+### Step 4: Customise RALPH.md
 
 Edit `RALPH.md` to match your project:
 
@@ -53,7 +62,7 @@ Edit `RALPH.md` to match your project:
 - Add any project-specific verification steps
 - Link to your project documentation for context
 
-### Step 4: Create some beads
+### Step 5: Create some beads
 
 ```bash
 bd create "Implement user login form"
@@ -61,7 +70,7 @@ bd create "Add password validation"
 bd create "Create logout endpoint"
 ```
 
-### Step 5: Run Ralph
+### Step 6: Run Ralph
 
 ```bash
 ./ralph.sh        # Run up to 10 iterations (default)
@@ -121,24 +130,6 @@ Ralph burns through tokens. Running this setup continuously requires a Max20 pla
 - `ralph.sh` - The outer loop that spawns Claude sessions
 - `RALPH.md` - Instructions for each "engineer" session
 - `skills/ralph-pm/SKILL.md` - The product manager skill
-
-## Installing the Ralph PM Skill
-
-To use `/ralph-pm` in your project, copy the skill folder:
-
-```bash
-mkdir -p .claude/skills
-cp -r skills/ralph-pm .claude/skills/
-```
-
-Or symlink it:
-
-```bash
-mkdir -p .claude/skills
-ln -s "$(pwd)/skills/ralph-pm" .claude/skills/ralph-pm
-```
-
-Then run `claude /ralph-pm` to start a product manager session.
 
 ## Related
 
